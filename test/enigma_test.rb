@@ -1,8 +1,8 @@
-require './test_helper'
+require './test/test_helper.rb'
 require './lib/enigma'
 
 class EnigmaTest < Minitest::Test
-  def test_it_exists
+  def test_it_exists_and_has_optional_attributes
     enigma = Enigma.new
 
     assert_instance_of Enigma, enigma
@@ -21,6 +21,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_get_shifts
+    skip
     enigma = Enigma.new
 
     expected = {
