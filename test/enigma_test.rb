@@ -20,4 +20,17 @@ class EnigmaTest < Minitest::Test
 
     assert_equal expected, enigma.encrypt("hello world", "02715", "040895")
   end
+
+  def test_get_shifts 
+    enigma = Enigma.new
+
+    expected = {
+                  A: 3,
+                  B: 27,
+                  C: 73,
+                  D: 20
+               }
+
+    assert_equal expected, enigma.shifts
+  end
 end
