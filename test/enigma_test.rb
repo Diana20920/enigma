@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
+require './test_helper'
 require './lib/enigma'
 
 class EnigmaTest < Minitest::Test
@@ -21,7 +20,7 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.encrypt("hello world", "02715", "040895")
   end
 
-  def test_get_shifts 
+  def test_get_shifts
     enigma = Enigma.new
 
     expected = {
