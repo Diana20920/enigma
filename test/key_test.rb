@@ -18,7 +18,7 @@ class KeyTest < Minitest::Test
                 d: 15
               }
 
-    assert_equal expected, keys.calculate("02715")
+    assert_equal expected, keys.calculate_key("02715")
   end
 
   def test_it_can_generate_random_5_digit_key
