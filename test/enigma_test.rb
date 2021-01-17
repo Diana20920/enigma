@@ -1,5 +1,4 @@
 require './test/test_helper.rb'
-require './lib/enigma'
 
 class EnigmaTest < Minitest::Test
   def test_it_exists_and_has_optional_attributes
@@ -41,19 +40,19 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.encrypt("hello world")
   end
 
-  def test_get_shifts
-    skip
-    enigma = Enigma.new
-
-    expected = {
-                  A: 3,
-                  B: 27,
-                  C: 73,
-                  D: 20
-               }
-
-    assert_equal expected, enigma.shifts
-  end
+  # def test_get_shifts
+  #   skip
+  #   enigma = Enigma.new
+  #
+  #   expected = {
+  #                 A: 3,
+  #                 B: 27,
+  #                 C: 73,
+  #                 D: 20
+  #              }
+  #
+  #   assert_equal expected, enigma.shifts
+  # end
 
   def test_it_can_read_file
     enigma = Enigma.new
