@@ -1,18 +1,26 @@
 require 'date'
 
 class Enigma
-  attr_reader :message,
-              :key,
-              :date
-
-  def initialize#(components)
-    # @message = components[:message] # this will likely become the file we are given to encryt
-    # @key = components[key: (0..9).to_a.sample(5).join]
-    # @date = components[date: Time.now.strftime("%d%m%Y")]
-  end
 
   def encrypt(message, key, date)
-    # expected_hash = Hash.new("")
+
+    if key.nil?
+      nums = (0..9).to_a
+      key = nums.sample(5).join
+    elsif
+      key.length == 5
+    elsif key.length != 5
+      nums = (0..9).to_a
+      key = nums.sample(5).join
+      if date.nil?
+        date = Time.now.strftime("%d%m%Y")
+      elsif
+        date.length == 6
+      elsif key.length != 6
+        date = Time.now.strftime("%d%m%Y")
+      end
+    end
+
     character_set = ("a".."z").to_a << " "
     shift_a = 3
     shift_b = 27
@@ -52,10 +60,15 @@ class Enigma
    }
   end
 
-  def shifts
-    nums = (0..9).to_a
-    shifts_hash = Hash.new(0)
-    
 
+
+  # def shifts
+  #   nums = (0..9).to_a
+  #   shifts_hash = Hash.new(0)
+  #
+  # end
+
+  def read_file(file)
+    file = File.open
   end
 end
