@@ -6,4 +6,17 @@ class ShiftTest < Minitest::Test
 
     assert_instance_of Shift, shift
   end
+
+  def test_get_shifts
+    enigma = Enigma.new
+
+    expected = {
+                  A: 3,
+                  B: 27,
+                  C: 73,
+                  D: 20
+               }
+
+    assert_equal expected, enigma.shifts
+  end
 end
