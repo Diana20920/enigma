@@ -5,7 +5,7 @@ class Key
     @number = number
   end
 
-  def calculate(number)
+  def calculate_key(number)
     hash_keys = [:a, :b, :c, :d]
 
     hash_values_raw = number.chars.each_cons(2).to_a
