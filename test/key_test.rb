@@ -1,7 +1,7 @@
 require './test/test_helper.rb'
 
 class KeyTest < Minitest::Test
-  def test_it_exists
+  def test_it_exists_and_has_attributes
     keys = Key.new("02715")
 
     assert_instance_of Key, keys

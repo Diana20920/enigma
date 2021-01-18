@@ -18,7 +18,7 @@ class OffsetTest < Minitest::Test
                 d: 5
               }
 
-    assert_equal expected, offsets.calculate("040895")
+    assert_equal expected, offsets.calculate_offset("040895")
   end
 
   def test_it_can_generate_random_6_digit_date
