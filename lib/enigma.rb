@@ -1,32 +1,33 @@
 require 'date'
+require_relative 'key'
+require_relative 'offset'
 
 class Enigma
+  attr_reader :message,
+              :key,
+              :date
+
+  def initialize
+    @message = message
+    @key     = Key.new
+    @date    = Offset.new
+  end
 
   def encrypt(message, key, date)
+    character_set = ("a".."z").to_a << " "
 
-    if key.nil?
-      nums = (0..9).to_a
-      key = nums.sample(5).join
-    elsif
-      key.length == 5
-    elsif key.length != 5
-      nums = (0..9).to_a
-      key = nums.sample(5).join
-      if date.nil?
-        date = Time.now.strftime("%d%m%Y")
-      elsif
-        date.length == 6
-      elsif key.length != 6
-        date = Time.now.strftime("%d%m%Y")
-      end
+    hash1 = @key.calculate_key(key)
+    hash2 = @date.calculate_offset(date)
+    shifts_hash = hash1.merge(hash2) do |hkeys, value1, value2|
+      value1 + value2
     end
 
-    character_set = ("a".."z").to_a << " "
-    shift_a = 3
-    shift_b = 27
-    shift_c = 73
-    shift_d = 20
-    to_encrypt = message.chars.each_slice(4).to_a
+    shift_a = shifts_hash[:a]
+    shift_b = shifts_hash[:b]
+    shift_c = shifts_hash[:c]
+    shift_d = shifts_hash[:d]
+
+    to_encrypt = message.downcase.chars.each_slice(4).to_a
     new_string = []
 
     to_encrypt.map do |array_of_4|
@@ -46,10 +47,12 @@ class Enigma
               index_d = character_set.index(array_of_4[3])
               new_ind_d = (index_d + shift_d).modulo(27)
               new_string << character_set[new_ind_d]
-      # elsif
-        # p "condition goes here"
             end
           end
+        end
+      elsif character_set.include?(char) == false
+        array_of_4.each do |char|
+          char
         end
       end
     end
@@ -58,17 +61,5 @@ class Enigma
       key:        key,
       date:       date
    }
-  end
-
-
-
-  # def shifts
-  #   nums = (0..9).to_a
-  #   shifts_hash = Hash.new(0)
-  #
-  # end
-
-  def read_file(file)
-    file = File.open
   end
 end
