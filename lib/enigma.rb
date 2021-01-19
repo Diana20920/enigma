@@ -15,9 +15,9 @@ class Enigma
 
   def encrypt(message, key = @key.number, date = @date.date)
     character_set = ("a".."z").to_a << " "
+    hash1         = @key.calculate_key(key)
+    hash2         = @date.calculate_offset(date)
 
-    hash1 = @key.calculate_key(key)
-    hash2 = @date.calculate_offset(date)
     shifts_hash = hash1.merge(hash2) do |hkeys, value1, value2|
       value1 + value2
     end
@@ -59,18 +59,18 @@ class Enigma
         end
       end
     end
-    {
-      encryption: new_string.join,
-      key:        key,
-      date:       date
-   }
+      {
+        encryption: new_string.join,
+        key:        key,
+        date:       date
+     }
   end
 
   def decrypt(cyphertext, key, date = @date.date)
     character_set = ("a".."z").to_a << " "
+    hash1         = @key.calculate_key(key)
+    hash2         = @date.calculate_offset(date)
 
-    hash1 = @key.calculate_key(key)
-    hash2 = @date.calculate_offset(date)
     shifts_hash = hash1.merge(hash2) do |hkeys, value1, value2|
       value1 + value2
     end
@@ -112,10 +112,10 @@ class Enigma
         end
       end
     end
-    {
-      decryption: new_string.join,
-      key:        key,
-      date:       date
-   }
+      {
+        decryption: new_string.join,
+        key:        key,
+        date:       date
+     }
   end
 end

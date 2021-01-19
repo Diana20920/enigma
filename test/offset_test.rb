@@ -17,7 +17,6 @@ class OffsetTest < Minitest::Test
                 c: 2,
                 d: 5
               }
-
     assert_equal expected, offsets.calculate_offset("040895")
   end
 
