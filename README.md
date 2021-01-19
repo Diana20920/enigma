@@ -6,17 +6,9 @@
 - Test drive a well-designed Object Oriented solution
 - Work with file i/o
 
-### SimpleCov
-- [x] Please make sure that your project uses [SimpleCov](https://github.com/colszowka/simplecov).
-- [ ] You should be able to demonstrate in your evaluation that SimpleCov reports accurate test coverage statistics at 95% coverage or above.
-
-### Version Control
-- [x] Create your own Github repository for hosting your project.
-You do not need to fork anything. Make sure that you are working on branches, using pull requests, and committing frequently in small chunks of functionality.
-
 ### More Details
 
-Refer to the BE Mod1 provided website.
+Refer to the BE Mod1 provided link at the time of project assignemnt.
 
 # Self-assessment
 #### Functionality
@@ -28,4 +20,8 @@ Refer to the BE Mod1 provided website.
 #### TDD
   - *Meets expectations.*
 #### Version Control
+  - [x] Create your own Github repository for hosting your project.
   - I started off well with branching, but as I became confused and stressed I made the decision to lower the priority of branches workflow and focus on writing functional code. I aim to be able to do both naturally and fluidly. 
+#### SimpleCov
+  - [x] Please make sure that your project uses [SimpleCov](https://github.com/colszowka/simplecov).
+  - [x] You should be able to demonstrate in your evaluation that SimpleCov reports accurate test coverage statistics at 95% coverage or above.
