@@ -66,6 +66,19 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, enigma.decrypt("keder ohulw", "02715", "040895")
   end
 
+  #### for CLI #####
+  def test_decrypt_cli_and_caps
+    enigma = Enigma.new
+
+    expected = {
+                  decryption: "waarcwlufht",
+                  key: "82648",
+                  date: "240818"
+               }
+    assert_equal expected, enigma.decrypt("fampMwxsphE", "82648", "240818")
+  end
+  ##################
+
   def test_decrypt_with_special_char
     enigma = Enigma.new
 
