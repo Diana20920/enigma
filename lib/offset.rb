@@ -7,7 +7,7 @@ class Offset
 
   def calculate_offset(date)
     offset_keys = [:a, :b, :c, :d]
-    date_array = ((date.to_i)**2).to_s.chars[-4..-1]
+    date_array  = ((date.to_i)**2).to_s.chars[-4..-1]
 
     offset_values = date_array.map do |value|
       value.to_i

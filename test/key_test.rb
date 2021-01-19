@@ -17,7 +17,6 @@ class KeyTest < Minitest::Test
                 c: 71,
                 d: 15
               }
-
     assert_equal expected, keys.calculate_key("02715")
   end
 
