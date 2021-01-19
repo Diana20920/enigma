@@ -1,4 +1,4 @@
-# enigma
+# Enigma
 
 ### Learning Goals / Areas of Focus
 - Practice breaking a program into logical components
@@ -7,7 +7,7 @@
 - Work with file i/o
 
 ### SimpleCov
-- [ ] Please make sure that your project uses [SimpleCov](https://github.com/colszowka/simplecov).
+- [x] Please make sure that your project uses [SimpleCov](https://github.com/colszowka/simplecov).
 - [ ] You should be able to demonstrate in your evaluation that SimpleCov reports accurate test coverage statistics at 95% coverage or above.
 
 ### Version Control
@@ -17,3 +17,10 @@ You do not need to fork anything. Make sure that you are working on branches, us
 ## More Details
 
 Refer to the BE Mod1 provided website.
+
+# Self-assessment
+### Functionality
+### OOP
+### Ruby Conventions and Mechanics
+### TDD
+### Version Control
